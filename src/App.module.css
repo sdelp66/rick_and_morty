@@ -1,0 +1,9 @@
+.App {
+   text-align: center;
+   padding: '25px';
+   background-image: url('../src/img/download.jpeg')
+}
+
+.container {
+   text-align: center;
+} 

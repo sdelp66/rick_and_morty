@@ -1,0 +1,10 @@
+.nav {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 96%;
+    background-color: aqua;
+    padding: 10px;
+    text-align: right;
+} 
+    

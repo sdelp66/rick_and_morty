@@ -35,11 +35,11 @@
 }
 
 .name {
-    display: inline;
-    position:inherit;
-    align-self: flex-start;
-    bottom: 55px;
-    left: 10px;
-    background-color: dimgray;
-    height: 55px;
+    text-align: left;
+    position: relative;
+    left: 5px;
+    bottom: 65px;
+    background-color: aliceblue;
+    width: fit-content;
+    text-decoration: none;
 }

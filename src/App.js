@@ -5,18 +5,9 @@ import Cards from './components/Cards/Cards.jsx'
 import React, { useState } from 'react';
 //import characters from './data.js'
 import Nav from './components/Nav/Nav.jsx'
-
-
-/*
-const example = {
-  name: 'Morty Smith',
-  species: 'Human',
-  gender: 'Male',
-  image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-};
-*/
-
-
+import { Route, Routes } from 'react-router-dom';
+import About from './components/About/About';
+import Detail from './components/Detail/Detail';
 
 
 function App () {
@@ -56,16 +47,23 @@ function App () {
     <div className={style.App}>
       <div className={style.container}>
         <Nav onSearch={onSearch}
-            random={random}/>
-        
+            random={random}/>  
       </div>
-      <div>
-        <Cards
-          characters={characters}
-          onClose={onClose}
+      <Routes>
+        <Route path="/home" element=
+        {
+          <Cards
+            characters={characters}
+            onClose={onClose}
+          />
+        }
         />
-      </div>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/detail/:detailId' element={<Detail/>}/>
+        
+      </Routes>  
     </div>
+    
   )
 }
 

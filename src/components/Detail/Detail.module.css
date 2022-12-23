@@ -1,0 +1,18 @@
+.detail{
+    color: antiquewhite;
+    margin-top: 80px;
+    display: flex;
+}
+
+.txt{
+    margin-left: 120px;
+    text-align: left;
+    text-decoration: none;
+}
+
+.imgD{
+    width: 200px;
+    height: auto;
+    margin-left: 60px;
+
+}

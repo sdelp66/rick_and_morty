@@ -2,16 +2,36 @@ import style from './App.module.css'
 //import Card from './components/Card.jsx'
 import Cards from './components/Cards/Cards.jsx'
 //import SearchBar from './components/SearchBar.jsx'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 //import characters from './data.js'
 import Nav from './components/Nav/Nav.jsx'
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import About from './components/About/About';
 import Detail from './components/Detail/Detail';
+import Form from './components/Form/Form';
 
 
 function App () {
   const [characters, setCharacters] = useState([]);
+  
+  const location = useLocation();
+  //console.log("useLocation:>>>",location)
+
+  const navigate = useNavigate();
+  const [access, setAccess] = useState(false);
+  const username = 'ejemplo@gmail.com';
+  const password = '1Password'; 
+
+  function login(userData) {
+    if (userData.password === password && userData.username === username) {
+       setAccess(true);
+       navigate('/home');
+    }
+ }
+
+ useEffect(() => {
+  !access && navigate('/');
+}, [access]);
 
   function onSearch(character){
     fetch(`https://rickandmortyapi.com/api/character/${character}`)
@@ -46,10 +66,11 @@ function App () {
   return (
     <div className={style.App}>
       <div className={style.container}>
-        <Nav onSearch={onSearch}
-            random={random}/>  
+        {location.pathname !=="/" && <Nav onSearch={onSearch}
+            random={random}/> } 
       </div>
       <Routes>
+        <Route path="/" element={<Form login={login}/>}></Route>
         <Route path="/home" element=
         {
           <Cards
@@ -68,18 +89,3 @@ function App () {
 }
 
 export default App
-
-
-/* <Card
-          name={Rick.name}
-          species={Rick.species}
-          gender={Rick.gender}
-          image={Rick.image}
-          onClose={() => window.alert('Emulamos que se cierra la card')}
-        /> 
-    <div>
-        /*<SearchBar
-          onSearch={(characterID) => window.alert(characterID)}
-        />
-        </div>    
-        */

@@ -4,13 +4,13 @@
     left: 10px;
     width: 96%;
     background-color: aqua;
-    padding: 10px;
     text-align: right;
     display: flex;
     flex-direction: row-reverse;
 } 
 
 button {
+    margin: 5px;;
     font-size: 12px;
     font-family: Verdana,Helvetica;
     font-weight: bold;

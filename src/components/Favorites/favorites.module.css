@@ -1,0 +1,6 @@
+.cards {
+    display: flex;
+    padding: 16px;
+    color: rgb(255, 255, 255);
+    justify-content: space-evenly;
+}

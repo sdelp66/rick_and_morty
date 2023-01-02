@@ -9,6 +9,7 @@ import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import About from './components/About/About';
 import Detail from './components/Detail/Detail';
 import Form from './components/Form/Form';
+import Favorites from "./components/Favorites/Favorites";
 
 
 function App () {
@@ -31,7 +32,7 @@ function App () {
 
  useEffect(() => {
   !access && navigate('/');
-}, [access]);
+}, [access,location]);
 
   function onSearch(character){
     fetch(`https://rickandmortyapi.com/api/character/${character}`)
@@ -63,6 +64,17 @@ function App () {
     return (onSearch(aleatorio));
   }
 
+  // const favoritos = (characters){
+  //   carFav=[]
+  //   for (let i=0; i<characters.length; i++){
+  //     if (myFavorites.includes(characters[i].id)) {
+  //       carFav.push(characters[i])
+  //     }
+  //     return carFav
+  //   }
+  // }
+  
+
   return (
     <div className={style.App}>
       <div className={style.container}>
@@ -78,6 +90,11 @@ function App () {
             onClose={onClose}
           />
         }
+        />
+        <Route path='/favorites' element=
+          {
+            <Favorites />
+          }
         />
         <Route path='/about' element={<About/>}/>
         <Route path='/detail/:detailId' element={<Detail/>}/>

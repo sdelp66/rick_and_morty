@@ -1,0 +1,20 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "backend de rick and morty",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "nodemon ./src/routes/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+
+  },
+  "author": "sdelp.eth",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.2.2",
+    "nodemon": "^2.0.20"
+  }
+}

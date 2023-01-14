@@ -35,11 +35,15 @@ function App () {
 }, [access,location]);
 
   function onSearch(character){
-    fetch(`http://localhost:3001/rickandmorty/character/${character}`)
+    fetch(`http://localhost:3000/rickandmorty/onsearch/${character}`)
       .then((response) => response.json())
       .then((data) => {
          if (data.name) {
+          console.log('characters>>> ', characters);
+          console.log('data id>>> ', data.id);
+          
           let existe = characters.find((e)=>e.id===data.id);
+         console.log('existe>>> ', existe)
           if (existe) {
             alert (data.name+" ("+data.id+") ya está");
           } else {

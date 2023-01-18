@@ -10,8 +10,9 @@ import style from "./About.module.css"
 export default function About(){
     return (
         <div className={style.about}>
-            <img src="../img/caricatura foto sdelp.eth.png" alt=""/>
+            <img src="../img/sdelp_eth.png" alt="" />
             <h2>Sergio</h2>
+            <h2> ATENCION!! SIN TERMINAR EL CSS de la App</h2>
             <p>Habia una vez un viejo programador que quizo volver a codear</p>
             <p>La app Rick & Morty nos permite aprender a jugar con React interactuando con lo básico, estílos, estados y ruteo hasta aquí</p>
         </div>

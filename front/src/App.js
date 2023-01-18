@@ -34,8 +34,8 @@ function App () {
   !access && navigate('/');
 }, [access,location]);
 
-  function onSearch(character){
-    fetch(`http://localhost:3000/rickandmorty/onsearch/${character}`)
+  function onSearch(id){
+    fetch(`http://localhost:3001/rickandmorty/character/${id}`)
       .then((response) => response.json())
       .then((data) => {
          if (data.name) {

@@ -10,7 +10,7 @@ import style from "./Detail.module.css";
     console.log(detailId)
 
     useEffect(() => {
-        fetch(`http://localhost:3000/rickandmorty/detail/${detailId}`)
+        fetch(`http://localhost:3001/rickandmorty/detail/${detailId}`)
           .then((response) => response.json())
           .then((char) => {
             if (char.name) {
